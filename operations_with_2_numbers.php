@@ -49,7 +49,7 @@ function My_GetInvolution($bas, $exponent) // 0 обращений
 	for ($i = 1; $i <= $exponent; $i++)
 		$Result = $Result * $bas;
 
-	return $Res;
+	return $Result;
 }
 
 function Factorial()
@@ -57,8 +57,8 @@ function Factorial()
 	global $n;
 	$Result = 1;
 
-	for($i = 2; $i <= n; $i++)
-		$Result = $Result * i;
+	for ($i = 2; $i <= $n; $i++)
+		$Result = $Result * $i;
 
 	return $Result;
 	
@@ -111,12 +111,12 @@ echo "Not my func: " . $Numb_1 . "^" . $Numb_2 . " = $Involution\n";
 $Numb_1 = 5;
 $Numb_2 = 4;
 // Возможно 7 обращений
-$Involution = function My_GetInvolution($Numb_1, $Numb_2);
+$Involution = My_GetInvolution($Numb_1, $Numb_2);
 echo "My func: " . $Numb_1 . "^" . $Numb_2 . " = $Involution\n";
 
 $n = 3;
 $Result = Factorial();
-echo "Factorial = $Result"
+echo "Factorial(" . $n .") = $Result\n";
 
 $ssss = 'I m the LITERAL !!!!!!!
 function GetSum_global_return_and_params()
