@@ -94,13 +94,13 @@ namespace Ref_To_glob_vars
             int real_references = 0;
             for (int index_Functions = 0; index_Functions < functions_count; index_Functions++)
             {
-                Console.WriteLine("Identifier: {0}", Function[index_Functions].Identifier);
+                Console.WriteLine("Идентификатор функции: {0}", Function[index_Functions].Identifier);
 
-                Console.WriteLine("Glob_var:");
+                Console.WriteLine("Возможные обращения:");
                 for (int i = 0; i < Function[index_Functions].LengthOfGlobalVariablesArray; i++)
                     Console.WriteLine(Function[index_Functions].GlobalVariables[i]);
 
-                Console.WriteLine("Referen:");
+                Console.WriteLine("Действительные обращения:");
                 for (int i = 0; i < Function[index_Functions].LengthOfReferencesToGlobalVariablesArray; i++)
                     Console.WriteLine(Function[index_Functions].ReferencesToGlobalVariables[i]);
                 possible_references += Function[index_Functions].LengthOfGlobalVariablesArray;
@@ -291,3 +291,4 @@ namespace Ref_To_glob_vars
         }
     }
 }
+
