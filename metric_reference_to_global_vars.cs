@@ -161,7 +161,27 @@ namespace Ref_To_glob_vars
             match = regular_expression.Match(source_string);
             while (match.Success)
             {
-                Function[index++].Declaration = match.Groups[0].Value;
+                int index_source_string = match.Index;
+                StringBuilder Declaration = new StringBuilder();
+
+                while (source_string[index_source_string] != '{')
+                    Declaration.Append(source_string[index_source_string++]);
+
+                Declaration.Append(source_string[index_source_string++]);
+
+                int depth = 1;
+
+                while (depth > 0)
+                {
+                    if (source_string[index_source_string] == '{')
+                        depth++;
+                    else if (source_string[index_source_string] == '}')
+                        depth--;
+
+                    Declaration.Append(source_string[index_source_string++]);
+                }
+
+                Function[index++].Declaration = Declaration.ToString();
                 match = match.NextMatch();
             }
 
