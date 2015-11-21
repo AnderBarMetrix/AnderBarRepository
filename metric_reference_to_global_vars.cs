@@ -103,8 +103,10 @@ namespace Ref_To_glob_vars
                 Console.WriteLine("Действительные обращения:");
                 for (int i = 0; i < Function[index_Functions].LengthOfReferencesToGlobalVariablesArray; i++)
                     Console.WriteLine(Function[index_Functions].ReferencesToGlobalVariables[i]);
+                    
                 possible_references += Function[index_Functions].LengthOfGlobalVariablesArray;
                 real_references += Function[index_Functions].LengthOfReferencesToGlobalVariablesArray;
+                
                 Console.WriteLine("-------------------------------------------------");
             }
 
